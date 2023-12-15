@@ -3,7 +3,7 @@ const Post=require('../models/Post')
 const Comment=require('../models/Comment')
 
 
-//CREATE
+//CREATE post
 const createPost =async (req,res)=>{
     try{
         const newPost=new Post(req.body)
@@ -19,7 +19,7 @@ const createPost =async (req,res)=>{
      
 }
 
-//UPDATE
+//UPDATE post
 const updatePost=async (req,res)=>{
     try{
        
@@ -33,7 +33,7 @@ const updatePost=async (req,res)=>{
 }
 
 
-//DELETE
+//DELETE post
 const deletePost=async (req,res)=>{
     try{
         await Post.findByIdAndDelete(req.params.id)

@@ -6,7 +6,7 @@ const Comment=require('../models/Comment')
 
 
 
-//UPDATE
+//UPDATE user
 const updateUser=async (req,res)=>{
     try{
         if(req.body.password){
@@ -23,7 +23,7 @@ const updateUser=async (req,res)=>{
 }
 
 
-//DELETE
+//DELETE user
 const deleteUser=async (req,res)=>{
     try{
         await userdb.findByIdAndDelete(req.params.id)
@@ -38,7 +38,7 @@ const deleteUser=async (req,res)=>{
 }
 
 
-//GET USER
+//GET USER user
 const getUser=async (req,res)=>{
     try{
         const user=await userdb.findById(req.params.id)
