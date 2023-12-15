@@ -11,10 +11,6 @@ const userRoutes = require('./routes/userRoutes')
 const postRoutes = require('./routes/postRoutes')
 const commentRoutes= require('./routes/commentRoutes')
 
-//database
-
-
-
 
 //middlewares
 dotenv.config()
