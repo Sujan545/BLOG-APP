@@ -29,7 +29,7 @@ if(!username || !email || !password){
 
 }
 
-//login
+//login controller
 const loginUser=async (req,res)=>{
     const { email, password } = req.body;
     if (!email || !password) {
@@ -56,8 +56,7 @@ const loginUser=async (req,res)=>{
     }
 }
 
-//logout
-
+//logout controller
 const logoutUser=async (req,res)=>{
     try{
         res.clearCookie("token",{sameSite:"none",secure:true}).status(200).send("User logged out successfully!")
@@ -69,7 +68,6 @@ const logoutUser=async (req,res)=>{
 }
 
 //refetch user
-
 const refetchUser=(req,res)=>{
     const token=req.cookies.token
     jwt.verify(token,process.env.SECRET,{},async (err,data)=>{
