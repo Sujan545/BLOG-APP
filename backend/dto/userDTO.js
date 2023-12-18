@@ -7,7 +7,6 @@ class UserDTO {
       if (!this.isValidEmail(email)) {
         throw new Error("Invalid Email format");
       }
-  
       this.name = name;
       this.username = username;
       this.email = email;
