@@ -44,8 +44,6 @@ const deleteComment=async (req,res)=>{
 }
 
 
-
-
 //GET POST COMMENTS
 const postComment =async (req,res)=>{
     try{
