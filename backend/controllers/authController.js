@@ -18,7 +18,6 @@ if(!username || !email || !password){
             const newUser=new userdb ({username,email,password:hashedPassword})
             const savedUser=await newUser.save()
             res.status(200).json(savedUser)
-    
         }
         
     }
