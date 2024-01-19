@@ -1,13 +1,13 @@
 class UserDTO {
-    constructor(name, username, email, password) {
-      if (!name || !username || !email || !password) {
+    constructor( username, email, password) {
+      if ( !username || !email || !password) {
         throw new Error("All fields are required");
       }
   
       if (!this.isValidEmail(email)) {
         throw new Error("Invalid Email format");
       }
-      this.name = name;
+     
       this.username = username;
       this.email = email;
       this.password = password;
