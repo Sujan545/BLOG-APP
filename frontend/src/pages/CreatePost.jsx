@@ -70,13 +70,10 @@ const CreatePost = () => {
           console.log(err)
         }
     }
-
-
-
   return (
     <div>
         <Navbar/>
-        <div className='px-6 md:px-[200px] mt-8'>
+        <div className='px-4 md:px-[200px] mt-8'>
         <h1 className='font-bold md:text-2xl text-xl '>Create a post</h1>
         <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
           <input onChange={(e)=>setTitle(e.target.value)} type="text" placeholder='Enter post title' className='px-4 py-2 outline-none'/>
@@ -95,12 +92,10 @@ const CreatePost = () => {
                 <p onClick={()=>deleteCategory(i)} className='text-white bg-black rounded-full cursor-pointer p-1 text-sm'><ImCross/></p>
             </div>
             ))}
-            
-            
             </div>
           </div>
           <textarea onChange={(e)=>setDesc(e.target.value)} rows={15} cols={30} className='px-4 py-2 outline-none' placeholder='Enter post description'/>
-          <button onClick={handleCreate} className='mx-auto w-full bg-black  md:w-[20%]  text-white font-semibold px-4 py-2 md:text-xl text-lg'>Create</button>
+          <button onClick={handleCreate} className='mx-auto w-full bg-black  md:w-[20%]  text-white font-semibold px-2 py-1 md:text-xl text-lg'>Create</button>
         </form>
         </div>
         <Footer/>
