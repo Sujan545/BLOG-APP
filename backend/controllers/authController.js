@@ -1,16 +1,11 @@
 const userdb = require("../models/User")
-const UserDTO=require('../dto/userDTO')
 const bcrypt = require('bcrypt')
 const jwt= require('jsonwebtoken')
 
 // register controller
 const registerUser= async(req,res)=>{
 const {username,email,password}=req.body
-const userData= new UserDTO(username, email, password)
 
-if(!userData){
-    res.status(422).json({ error: "fill all the part" })
-}
     try{
         const preuser = await userdb.findOne({email:email})
         if(preuser){
