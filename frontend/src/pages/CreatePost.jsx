@@ -2,11 +2,12 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {ImCross} from 'react-icons/im'
-import { useContext, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import { URL } from '../url'
 import axios from 'axios'
 import { Navigate, useNavigate } from 'react-router-dom'
+import JoditEditior from "jodit-react"
 
 const CreatePost = () => {
    
@@ -16,8 +17,44 @@ const CreatePost = () => {
     const {user}=useContext(UserContext)
     const [cat,setCat]=useState("")
     const [cats,setCats]=useState([])
+    const editor = useRef(null)
 
     const navigate=useNavigate()
+    const config = {
+      spellcheck: false,
+      readonly: false,
+      placeholder: "Start typings...",
+      minHeight: 400,
+      buttons: [
+        "source",
+        "|",
+        "bold",
+        "italic",
+        "|",
+        "ul",
+        "ol",
+        "|",
+        "font",
+        "fontsize",
+        "brush",
+        "paragraph",
+        "|",
+        "table",
+        "link",
+        "|",
+        "left",
+        "center",
+        "right",
+        "justify",
+        "|",
+        "undo",
+        "redo",
+        "|",
+        "hr",
+        "eraser",
+        "fullsize",
+      ],
+    };
 
     const deleteCategory=(i)=>{
        let updatedCats=[...cats]
