@@ -21,7 +21,14 @@ const ProfilePosts = ({p}) => {
        <p>{new Date(p.updatedAt).toString().slice(16,24)}</p>
        </div>
       </div>
-      <p className="text-sm md:text-lg">{p.desc.slice(0,200)+" ...Read more"}</p>
+      <p className="text-sm md:text-lg"
+      dangerouslySetInnerHTML={{
+        __html: p.desc?.slice(0, 200),
+      }}
+      />
+       {p.desc?.length > 200 ? (
+          <span className="text-gray-500 ">Read more</span>
+        ) : null}
     </div>
 
     </div>
